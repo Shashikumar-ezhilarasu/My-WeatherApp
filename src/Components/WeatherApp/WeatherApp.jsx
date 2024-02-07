@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './WeatherApp.css';
 
 import searchIcon from '../Assets/search.png';
@@ -12,6 +12,8 @@ import cloudIcon from '../Assets/cloud.png';
 
 const WeatherApp = () => {
     let api_key = "1efef093e6f52de7ce9625c0fc3b679c";
+
+    const [wicon,setWicon]=useState(cloudIcon);
 
     const search = async () => {
         const element = document.getElementsByClassName("cityInput");
@@ -31,6 +33,32 @@ const WeatherApp = () => {
         wind[0].innerHTML = data.wind.speed + " km/h";
         temperature[0].innerHTML = data.main.temp + "°C";
         location[0].innerHTML = data.name;
+
+        if(data.weather[0].icon==="01d" || data.weather[0].icon=="01n")
+        {
+          setWicon(clearIcon);
+        }
+        else if(data.weather[0].icon==="02d" || data.weather[0].icon=="02n"){
+          setWicon(cloudIcon);
+        }
+        else if(data.weather[0].icon==="03d" || data.weather[0].icon=="03n"){
+          setWicon(drizzleIcon);
+        }
+        else if(data.weather[0].icon==="04d" || data.weather[0].icon=="04n"){
+          setWicon(drizzleIcon);
+        }
+        else if(data.weather[0].icon==="09d" || data.weather[0].icon=="09n"){
+          setWicon(rainIcon);
+        }
+        else if(data.weather[0].icon==="10d" || data.weather[0].icon=="10n"){
+          setWicon(rainIcon);
+        }
+        else if(data.weather[0].icon==="13d" || data.weather[0].icon=="13n"){
+          setWicon(snowIcon);
+        }
+        else{
+          setWicon(clearIcon);
+        }
     }
 
     return (
@@ -42,7 +70,7 @@ const WeatherApp = () => {
                 </div>
             </div>
             <div className="weather-image">
-                <img src={cloudIcon} alt="" />
+                <img src={wicon} alt="" />
             </div>
             <div className="weather-temp">24°C</div>
             <div className="weather-location">London</div>
