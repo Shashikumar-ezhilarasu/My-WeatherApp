@@ -12,12 +12,20 @@ import windIcon from '../Assets/wind.png'
 import cloudIcon from '../Assets/cloud.png'
 const WeatherApp = () => {
 
-    let api_key ="https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key"
+    let api_key ="1efef093e6f52de7ce9625c0fc3b679c";
+
+    const search =() =>{
+        const element =document.getElementsByClassName("cityInput")
+        if(element[0].value==="")
+        {
+          return 0;
+        }
+    }
   return (
     <div className='container'>
       <div className="top-bar">
         <input type="text" className="cityInput"  placeholder=' search city'/>
-        <div className="search-icon">
+        <div className="search-icon" onClick={()=>{search}}>
             <img src={searchIcon} alt="" />
         </div>
       </div>
