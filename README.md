@@ -1,4 +1,5 @@
 # 🌦️ Weather Finder App with ReactJS
+![image](https://github.com/Shashikumar-ezhilarasu/My-WeatherApp/assets/152071778/a18706cc-9784-4c1c-8dca-3609e7d5cbb3)
 
 This project is a weather finder application built using ReactJS. It allows users to search for the weather of different locations and provides real-time weather information. The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
