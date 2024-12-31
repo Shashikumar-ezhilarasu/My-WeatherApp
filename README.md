@@ -5,7 +5,7 @@ This project is a weather finder application built using ReactJS. It allows user
 
 ## Getting Started
 
-In the project directory, you can run:
+In the project directory, you can run :
 
 ### 🚀 `npm start`
 
