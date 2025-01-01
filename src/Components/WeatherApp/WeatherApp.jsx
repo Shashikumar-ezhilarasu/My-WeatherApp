@@ -11,7 +11,7 @@ import windIcon from '../Assets/wind.png';
 import cloudIcon from '../Assets/cloud.png';
 
 const WeatherApp = () => {
-    let api_key = "1efef093e6f52de7ce9625c0fc3b679c";
+    let api_key = "place your keyy";
 
     const [wicon,setWicon]=useState(cloudIcon);
 
